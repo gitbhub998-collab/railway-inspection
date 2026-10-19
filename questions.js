@@ -49,7 +49,7 @@ const quizData = [
         arabicQuestion: "ما الطريقة المستخدمة للفحص اليدوي لوصلات القضبان ونهايات السكك؟",
         options: { A: "Magnetic Particle Inspection (MPI)", B: "Liquid Penetrant Inspection (LPI)", C: "EMAT", D: "Radiography" },
         arabicOptions: { A: "الفحص بالجسيمات المغناطيسية (MPI)", B: "الفحص بالسوائل المتغلغلة (LPI)", C: "محول صوتي كهرومغناطيسي (EMAT)", D: "الفحص بالأشعة" },
-        correctAnswer: "A",
+        correctAnswer: "B",
         hint: "A visible dye helps reveal surface-breaking cracks.",
         arabicHint: "تساعد الصبغة المرئية على كشف الشقوق المفتوحة على السطح."
     },
