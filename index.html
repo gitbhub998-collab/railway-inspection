@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Inspection</title>
+    <link rel="icon" href="Logo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-line"></div>
+        <img class="brand-logo" src="Logo.jpg" alt="Train Inspection">
+    </header>
+
+    <main class="viewport">
+        <div class="assessment-container">
+            
+            <div class="bebo-wrapper">
+                <div class="bebo-bubble" id="bebo-bubble">مرحبا اسمي بيبو جاهز لبدء الاختبار؟</div>
+                <div class="bebo-robot" id="bebo-robot">
+                    <div class="eyes-container">
+                        <div class="eye"></div>
+                        <div class="eye"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="quiz-ui">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="meta-info">Question <span id="current-idx">01</span> / <span id="total-idx">00</span></div>
+                        
+                        <div class="progress-circle-container">
+                            <svg class="progress-circle" viewBox="0 0 100 100">
+                                <circle class="progress-bg" cx="50" cy="50" r="45"/>
+                                <circle class="progress-fill-circle" cx="50" cy="50" r="45" id="progress-circle-fill"/>
+                            </svg>
+                            <div class="progress-text" id="progress-text">0%</div>
+                        </div>
+                        
+                        <button class="hint-toggle" onclick="toggleHint()" title="Reveal Intel">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3m.08 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="hint-display" id="hint-panel">
+                        <div id="hint-text"></div>
+                    </div>
+
+                    <div class="question-body" id="question-text"></div>
+
+                    <div id="options-container" class="options-grid"></div>
+
+                    <div class="footer-nav">
+                        <div class="nav-actions-right">
+                            <button class="btn-nav" id="btn-prev" onclick="move(-1)">BACK</button>
+                            <button class="btn-nav" id="btn-skip" onclick="move(1)">SKIP</button>
+                            <button class="btn-primary" id="btn-next" onclick="move(1)" disabled>NEXT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="results-ui" class="hidden">
+                <div class="card results-view">
+                    <div class="meta-info">Complete Question</div>
+                    <div class="final-pct" id="final-pct">0%</div>
+                    <div class="feedback-container" id="final-feedback">...</div>
+                    <button class="btn-primary btn-full" id="results-action">RESTART ASSESSMENT</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>Developer By Bilal Mohamed</footer>
+
+    
+    <svg style="display: none;">
+        <defs>
+            <linearGradient id="progress-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color: #ff4f4f; stop-opacity: 1" />
+                <stop offset="100%" style="stop-color: #ff7e7e; stop-opacity: 1" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <!-- ضع ملفات الصوت هنا: audio/fail.mp3 و audio/success.mp3 -->
+    <audio id="audio-fail" preload="auto">
+        <source src="/audio/fail.mp3" type="audio/mpeg">
+        <source src="/audio/fail.wav" type="audio/wav">
+    </audio>
+    <audio id="audio-success" preload="auto">
+        <source src="/audio/success.mp3" type="audio/mpeg">
+        <source src="/audio/success.wav" type="audio/wav">
+    </audio>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
